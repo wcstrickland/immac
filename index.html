@@ -1,7 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
+<link rel="stylesheet" href="libs/mobile-drag-drop/release/default.css">
+<script src="libs/mobile-drag-drop/release/index.min.js"></script>
+
+<!--optional import of scroll behaviour-->
+<script src="libs/mobile-drag-drop/release/scroll-behaviour.min.js"></script>
+
+<script>
+    // options are optional ;)
+    MobileDragDrop.polyfill({
+        // use this to make use of the scroll behaviour
+        dragImageTranslateOverride: MobileDragDrop.scrollBehaviourDragImageTranslateOverride
+    });
+</script>
     <script src="DragDropTouch.js"></script>
 <script>
+// dragenter listener
+(event)=> {
+    event.preventDefault();
+}
 function allowDrop(ev) {
   ev.preventDefault();
 }
