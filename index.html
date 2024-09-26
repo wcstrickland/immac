@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+    <script src="DragDropTouch.js"></script>
 <script>
 function allowDrop(ev) {
   ev.preventDefault();
@@ -15,6 +16,7 @@ function drop(ev) {
   ev.target.appendChild(document.getElementById(data));
 }
 </script>
+
 <style>
     html {
         background-color: #eee;
