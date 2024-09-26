@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<script>
+function allowDrop(ev) {
+  ev.preventDefault();
+}
+
+function drag(ev) {
+  ev.dataTransfer.setData("text", ev.target.id);
+}
+
+function drop(ev) {
+  ev.preventDefault();
+  var data = ev.dataTransfer.getData("text");
+  ev.target.appendChild(document.getElementById(data));
+}
+</script>
+<style>
+    html {
+        background-color: #eee;
+    }
+
+    .container {
+        margin-left:17%;
+        margin-top:2em;
+        width: 3em;
+        height: 3em;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-row: auto auto;
+        grid-column-gap: 10px;
+        grid-row-gap: 10px;
+    }
+
+    .wrapper {
+        margin-left: 20%;
+    }
+
+    .box {
+        padding: 10px;
+        border-radius: 10px;
+        width: 6em;
+        height: 6em;
+        border: 3px solid #333;
+        background-color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 10px;
+        font-family: sans-serif;
+    }
+    .imgr {
+        border-radius: 10px;
+        width: 4em;
+        height: 4em;
+        font-family: sans-serif;
+    }
+</style>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Immaculate Grid</title>
+</head>
+
+<body>
+    <div style="display: flex; flex-direction: column;">
+        <div>
+            <img class="imgr" id="drag1" src="1.JPEG"  ondragstart="drag(event)" draggable="true"/>
+            <img class="imgr" id="drag2" src="2.JPEG"   ondragstart="drag(event)" draggable="true"/>
+            <img class="imgr" id="drag3" src="3.JPEG"   ondragstart="drag(event)" draggable="true"/>
+            <img class="imgr" id="drag4" src="4.JPEG"   ondragstart="drag(event)" draggable="true"/>
+            <img class="imgr" id="drag5" src="5.JPEG"   ondragstart="drag(event)" draggable="true"/>
+            <img class="imgr" id="drag6" src="6.JPEG"   ondragstart="drag(event)" draggable="true"/>
+            <img class="imgr" id="drag7" src="7.JPEG"   ondragstart="drag(event)" draggable="true"/>
+            <img class="imgr" id="drag8" src="8.JPEG"   ondragstart="drag(event)" draggable="true"/>
+            <img class="imgr" id="drag9" src="9.JPEG"   ondragstart="drag(event)" draggable="true"/>
+            <img class="imgr" id="drag10" src="10.JPEG"   ondragstart="drag(event)" draggable="true" />
+            <img class="imgr" id="drag11" src="11.JPEG"   ondragstart="drag(event)" draggable="true" />
+            <img class="imgr" id="drag12" src="12.JPEG"   ondragstart="drag(event)" draggable="true" />
+            <img class="imgr" id="drag13" src="13.JPEG"   ondragstart="drag(event)" draggable="true" />
+        </div>
+        <div class="container">
+            <div class="box">Place your bets</div>
+            <img class="imgr" style="height:6em; width:6em;" src="never.png" />
+            <img class="imgr"  style="height:6em; width:6em;"src="former.png" />
+            <img class="imgr" style="height:6em; width:6em;" src="solid.png" />
+            <div class="box" id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+            <div class="box" id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+            <img class="imgr"  style="height:6em; width:6em;"src="dog.png" />
+            <div class="box" id="div3" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+            <div class="box" id="div4" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        </div>
+        </div>
+    </div>
+</body>
+
+</html>
